@@ -1,49 +1,43 @@
 "use client";
 
-import { useState } from "react";
-import { bestSellerTabs, homepageBestsellerSlugs } from "@/data/homepage";
-import { getBestsellerProducts, getProductsBySlugs } from "@/data/products";
+import { homepageBestsellerSlugs } from "@/data/homepage";
+import { getProductsBySlugs } from "@/data/products";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { ProductCard } from "@/components/product/product-card";
-import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function BestSellers() {
-  const [activeTab, setActiveTab] = useState("all");
-  const curatedBestsellers = getProductsBySlugs(homepageBestsellerSlugs);
-  const bestsellers = getBestsellerProducts();
-
-  const filtered =
-    activeTab === "all"
-      ? curatedBestsellers
-      : bestsellers.filter((p) => p.categorySlug === activeTab).slice(0, 4);
+  const products = getProductsBySlugs(homepageBestsellerSlugs);
+  const [featured, ...rest] = products;
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="bg-stone py-16 md:py-24">
       <Container>
-        <SectionHeading title="Best Sellers" viewMoreLink="/best-sellers" />
-
-        <div className="mb-8 flex flex-wrap gap-2">
-          {bestSellerTabs.map((tab) => (
-            <button
-              key={tab.slug}
-              onClick={() => setActiveTab(tab.slug)}
-              className={cn(
-                "rounded-full px-5 py-2 text-sm font-medium transition-colors",
-                activeTab === tab.slug
-                  ? "bg-primary text-white"
-                  : "bg-muted text-muted-foreground hover:text-foreground"
-              )}
-            >
-              {tab.label}
-            </button>
-          ))}
+        <div className="mb-10 flex items-end justify-between md:mb-14">
+          <div>
+            <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              Most Loved
+            </h2>
+          </div>
+          <Link
+            href="/best-sellers"
+            className="hidden font-heading text-xs uppercase tracking-wider text-accent transition-colors hover:text-primary sm:block"
+          >
+            View All →
+          </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className="grid gap-6 md:grid-cols-12">
+          {featured && (
+            <div className="md:col-span-5">
+              <ProductCard product={featured} />
+            </div>
+          )}
+          <div className="grid grid-cols-2 gap-4 md:col-span-7 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+            {rest.slice(0, 4).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </Container>
     </section>

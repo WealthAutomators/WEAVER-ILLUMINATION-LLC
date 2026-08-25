@@ -48,7 +48,7 @@ export const ProductCard = memo(function ProductCard({ product, className }: Pro
         transition={{ duration: 0.4 }}
         whileHover={{ y: -4 }}
       >
-        <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-muted shadow-sm transition-shadow duration-300 group-hover:shadow-lg">
+        <div className="relative aspect-[4/5] overflow-hidden border border-border bg-muted transition-shadow duration-300 group-hover:shadow-md">
           <Link href={`/product/${product.slug}`} className="block h-full w-full">
             <Image
               src={product.images[0]}
@@ -131,7 +131,7 @@ export const ProductCard = memo(function ProductCard({ product, className }: Pro
 
         <div className="mt-4 flex flex-1 flex-col gap-1.5">
           <Link href={`/product/${product.slug}`}>
-            <h3 className="text-sm font-medium leading-snug text-foreground transition-colors hover:text-primary line-clamp-2">
+            <h3 className="text-sm font-medium leading-snug text-foreground transition-colors hover:text-accent line-clamp-2">
               {product.name}
             </h3>
           </Link>

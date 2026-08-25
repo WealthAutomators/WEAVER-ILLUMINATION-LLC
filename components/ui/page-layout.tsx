@@ -16,12 +16,12 @@ interface PageHeroProps {
 
 export function PageHero({ title, description, breadcrumbs }: PageHeroProps) {
   return (
-    <div className="border-b border-border bg-muted/30">
+    <div className="border-b border-border bg-stone/50">
       <Container className="py-6 md:py-8">
         <nav aria-label="Breadcrumb" className="mb-4">
           <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
             <li>
-              <Link href="/" className="flex items-center gap-1 transition-colors hover:text-primary">
+              <Link href="/" className="flex items-center gap-1 transition-colors hover:text-accent">
                 <Home className="h-3.5 w-3.5" />
                 <span className="sr-only sm:not-sr-only">Home</span>
               </Link>
@@ -30,7 +30,7 @@ export function PageHero({ title, description, breadcrumbs }: PageHeroProps) {
               <li key={index} className="flex items-center gap-1.5">
                 <ChevronRight className="h-3.5 w-3.5 shrink-0" />
                 {item.href ? (
-                  <Link href={item.href} className="transition-colors hover:text-primary">
+                  <Link href={item.href} className="transition-colors hover:text-accent">
                     {item.label}
                   </Link>
                 ) : (
@@ -40,7 +40,7 @@ export function PageHero({ title, description, breadcrumbs }: PageHeroProps) {
             ))}
           </ol>
         </nav>
-        {title && <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>}
+        {title && <h1 className="font-display text-3xl font-light tracking-tight text-primary md:text-4xl">{title}</h1>}
         {description && (
           <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">{description}</p>
         )}
@@ -58,7 +58,7 @@ interface PageSectionProps {
 export function PageSection({ title, children, className }: PageSectionProps) {
   return (
     <section className={cn("py-8 md:py-10", className)}>
-      {title && <h2 className="mb-4 text-xl font-semibold md:text-2xl">{title}</h2>}
+      {title && <h2 className="font-heading mb-4 text-xl font-medium text-primary md:text-2xl">{title}</h2>}
       <div className="prose-store text-muted-foreground leading-relaxed">{children}</div>
     </section>
   );

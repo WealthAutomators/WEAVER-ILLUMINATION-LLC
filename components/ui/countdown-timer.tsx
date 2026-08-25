@@ -38,7 +38,7 @@ export function CountdownTimer({ endTime, className }: CountdownTimerProps) {
           { label: "Sec", value: timeLeft.seconds },
         ].map((unit) => (
           <div key={unit.label} className="flex flex-col items-center">
-            <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-sm font-semibold text-white">
+            <span className="flex h-10 w-10 items-center justify-center bg-accent text-sm font-semibold text-accent-foreground">
               {pad(unit.value)}
             </span>
             <span className="mt-1 text-[10px] uppercase tracking-wider text-muted-foreground">

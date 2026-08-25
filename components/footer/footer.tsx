@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Globe, Share2, Users } from "lucide-react";
 import { company } from "@/data/company";
 import { footerLinks, paymentMethods } from "@/data/navigation";
 import { Container } from "@/components/ui/container";
@@ -8,31 +6,24 @@ import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
-      <Container className="py-12">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <Image src="/logo/logo.svg" alt={company.name} width={220} height={44} className="mb-4 h-11 w-auto" />
-            <p className="text-sm leading-relaxed text-muted-foreground">{company.description}</p>
-            <div className="mt-4 flex gap-3">
-              <a href={company.social.instagram} className="text-muted-foreground transition-colors hover:text-primary" aria-label="Instagram">
-                <Share2 className="h-5 w-5" />
-              </a>
-              <a href={company.social.facebook} className="text-muted-foreground transition-colors hover:text-primary" aria-label="Facebook">
-                <Users className="h-5 w-5" />
-              </a>
-              <a href={company.social.twitter} className="text-muted-foreground transition-colors hover:text-primary" aria-label="Twitter">
-                <Globe className="h-5 w-5" />
-              </a>
-            </div>
+    <footer className="bg-primary text-primary-foreground">
+      <Container className="py-14 md:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-1">
+            <p className="font-heading text-xs font-semibold uppercase tracking-[0.2em]">
+              WEAVER
+              <span className="mx-1 font-normal text-primary-foreground/50">/</span>
+              ILLUMINATION
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-primary-foreground/60">{company.description}</p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Company</h3>
+            <h3 className="mb-4 font-heading text-[10px] font-semibold uppercase tracking-[0.15em] text-primary-foreground/50">Shop</h3>
             <ul className="space-y-2.5">
-              {footerLinks.company.map((link) => (
+              {footerLinks.shop.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <Link href={link.href} className="text-sm text-primary-foreground/70 transition-colors hover:text-highlight">
                     {link.label}
                   </Link>
                 </li>
@@ -41,21 +32,34 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Customer Care</h3>
+            <h3 className="mb-4 font-heading text-[10px] font-semibold uppercase tracking-[0.15em] text-primary-foreground/50">Categories</h3>
+            <ul className="space-y-2.5">
+              {footerLinks.categories.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-sm text-primary-foreground/70 transition-colors hover:text-highlight">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 font-heading text-[10px] font-semibold uppercase tracking-[0.15em] text-primary-foreground/50">Customer Care</h3>
             <ul className="space-y-2.5">
               {footerLinks.customerCare.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <Link href={link.href} className="text-sm text-primary-foreground/70 transition-colors hover:text-highlight">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <h3 className="mb-4 mt-8 text-sm font-semibold uppercase tracking-wider">Legal</h3>
+            <h3 className="mb-4 mt-8 font-heading text-[10px] font-semibold uppercase tracking-[0.15em] text-primary-foreground/50">Company</h3>
             <ul className="space-y-2.5">
-              {footerLinks.legal.map((link) => (
+              {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <Link href={link.href} className="text-sm text-primary-foreground/70 transition-colors hover:text-highlight">
                     {link.label}
                   </Link>
                 </li>
@@ -64,14 +68,26 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Contact</h3>
-            <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <h3 className="mb-4 font-heading text-[10px] font-semibold uppercase tracking-[0.15em] text-primary-foreground/50">Policies</h3>
+            <ul className="space-y-2.5">
+              {footerLinks.policies.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-sm text-primary-foreground/70 transition-colors hover:text-highlight">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mb-4 mt-8 font-heading text-[10px] font-semibold uppercase tracking-[0.15em] text-primary-foreground/50">Contact</h3>
+            <ul className="space-y-2 text-sm text-primary-foreground/70">
+              <li className="font-medium text-primary-foreground">{company.name}</li>
               <li>
                 {company.address.street}<br />
                 {company.address.city}, {company.address.state} {company.address.zip}
               </li>
               <li>
-                <a href={`mailto:${company.email}`} className="transition-colors hover:text-primary">
+                <a href={`mailto:${company.email}`} className="transition-colors hover:text-highlight">
                   {company.email}
                 </a>
               </li>
@@ -80,13 +96,13 @@ export function Footer() {
         </div>
       </Container>
 
-      <Separator />
+      <Separator className="bg-primary-foreground/10" />
 
       <Container className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-        <p className="text-sm text-muted-foreground">{company.copyright}</p>
-        <div className="flex items-center gap-2">
+        <p className="text-sm text-primary-foreground/50">{company.copyright}</p>
+        <div className="flex items-center gap-2 opacity-70">
           {paymentMethods.map((method) => (
-            <Image key={method.name} src={method.icon} alt={method.name} width={40} height={28} />
+            <img key={method.name} src={method.icon} alt={method.name} width={40} height={28} />
           ))}
         </div>
       </Container>

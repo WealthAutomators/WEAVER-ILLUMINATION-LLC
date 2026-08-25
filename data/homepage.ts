@@ -7,91 +7,137 @@ import {
 export const heroSlides: HeroSlide[] = [
   {
     id: "1",
-    image: "/hero/hero-1.jpg",
-    headline: "Everything Your Home Needs, All in One Place.",
+    image: "/hero/hero-main.jpg",
+    headline: "FIND THE\nLIGHT.",
     description:
-      "Shop electronics, home essentials, toys, beauty products, kitchen accessories and more at prices you'll love.",
-    ctaText: "Shop Collection",
+      "Thoughtful products, everyday essentials and beautiful discoveries for the spaces and moments that matter.",
+    ctaText: "Discover More",
     ctaLink: "/shop",
-    secondaryCtaText: "Today's Deals",
-    secondaryCtaLink: "/shop?sale=true",
+    secondaryCtaText: "Shop New Arrivals",
+    secondaryCtaLink: "/new-arrivals",
+  },
+];
+
+export const editorialStatement = {
+  heading: "BRING MORE\nLIGHT INTO\nEVERYDAY.",
+  description:
+    "A curated collection of products designed to make everyday spaces, routines and moments a little better.",
+};
+
+export const shopBySpace = [
+  {
+    id: "home",
+    title: "AT HOME",
+    description: "Objects that make everyday spaces feel better.",
+    image: "/spaces/at-home.jpg",
+    href: "/categories/home-kitchen",
+    aspect: "tall" as const,
+  },
+  {
+    id: "work",
+    title: "AT WORK",
+    description: "Tools and details for a clearer workspace.",
+    image: "/spaces/at-work.jpg",
+    href: "/categories/office-supplies",
+    aspect: "wide" as const,
+  },
+  {
+    id: "go",
+    title: "ON THE GO",
+    description: "Compact essentials for life in motion.",
+    image: "/spaces/on-the-go.jpg",
+    href: "/categories/travel",
+    aspect: "square" as const,
+  },
+  {
+    id: "outside",
+    title: "OUTSIDE",
+    description: "Gear for fresh air and open horizons.",
+    image: "/spaces/outside.jpg",
+    href: "/categories/outdoor",
+    aspect: "tall" as const,
   },
 ];
 
 export const features: Feature[] = [
   {
     id: "1",
-    icon: "truck",
-    title: "Fast Shipping",
-    description: "Free shipping on orders over $75. Delivered in 3–5 business days.",
+    icon: "sparkles",
+    title: "Thoughtful Selection",
+    description: "Every product chosen for quality, purpose, and everyday value.",
   },
   {
     id: "2",
-    icon: "shield",
-    title: "Secure Checkout",
-    description: "Your payment information is protected with industry-standard encryption.",
+    icon: "tag",
+    title: "Everyday Value",
+    description: "Fair prices on useful things you'll reach for again and again.",
   },
   {
     id: "3",
-    icon: "rotate",
-    title: "Easy Returns",
-    description: "Hassle-free 30-day returns on most items. We make it simple.",
+    icon: "shopping-bag",
+    title: "Easy Shopping",
+    description: "Simple browsing, secure checkout, and reliable delivery.",
   },
   {
     id: "4",
-    icon: "headphones",
-    title: "Customer Support",
-    description: "Our friendly team is available Mon–Fri to help with orders and questions.",
-  },
-  {
-    id: "5",
-    icon: "star",
-    title: "Trusted Quality",
-    description: "Every product is carefully selected for quality, value, and reliability.",
+    icon: "compass",
+    title: "Fresh Discoveries",
+    description: "New arrivals and seasonal finds added regularly.",
   },
 ];
 
 export const dealsEndTime = new Date(Date.now() + 1000 * 60 * 60 * 18).toISOString();
 
 export const homepageDealsSlugs = [
-  "wireless-earbuds",
-  "electric-kettle",
-  "air-fryer",
-  "dog-bed",
-  "bath-towel-set",
-  "sunglasses-classic",
+  "linen-throw-blanket",
+  "ceramic-pour-over-set",
+  "insulated-travel-tumbler",
+  "bamboo-bath-mat",
+  "merino-wool-scarf",
+  "packing-cube-set",
 ] as const;
 
 export const homepageBestsellerSlugs = [
-  "wireless-earbuds",
-  "bluetooth-speaker",
+  "cast-iron-dutch-oven",
+  "linen-throw-blanket",
+  "hiking-daypack",
+  "jojoba-face-oil",
+  "weighted-sleep-blanket",
+  "digital-photo-frame",
   "bath-towel-set",
-  "yoga-mat",
-  "kids-learning-tablet",
-  "coffee-grinder",
-  "dog-bed",
-  "electric-kettle",
+  "nursery-sound-machine",
 ] as const;
 
 export const homepageFeaturedSlugs = [
-  "wireless-earbuds",
-  "electric-kettle",
-  "bath-towel-set",
-  "kids-learning-tablet",
-  "standing-desk-lamp",
-  "air-fryer",
-  "yoga-mat",
-  "dog-bed",
-  "coffee-grinder",
-  "bluetooth-speaker",
+  "cast-iron-dutch-oven",
+  "linen-throw-blanket",
+  "ceramic-pour-over-set",
+  "hiking-daypack",
+  "jojoba-face-oil",
 ] as const;
 
 export const homepageNewArrivalSlugs = [
-  "stem-robot-kit",
-  "vitamin-c-serum-set",
-  "baby-monitor",
-  "foam-roller",
+  "portable-projector",
+  "silk-sleep-mask-set",
+  "woven-storage-baskets",
+  "outdoor-lawn-game-set",
+  "bedside-reading-lamp",
+  "travel-neck-pillow",
+  "magnetic-tile-set",
+  "acupressure-mat-set",
 ] as const;
+
+export const illuminationEditSlugs = {
+  oversized: "cast-iron-dutch-oven",
+  lifestyle: "/spaces/edit-lifestyle.jpg",
+  medium: ["linen-throw-blanket", "jojoba-face-oil"],
+  small: "silk-sleep-mask-set",
+};
+
+export const goldenHourDeal = {
+  productSlug: "insulated-travel-tumbler",
+  title: "GOLDEN HOUR",
+};
 
 export const promotionalBanner: PromoBanner = {
   id: "1",
@@ -106,9 +152,9 @@ export const promotionalBanner: PromoBanner = {
 export const aboutSection = {
   title: "Shopping Made Easy.",
   description:
-    "AAM Partners LLC brings together quality products across multiple categories, helping families find everything they need in one trusted online marketplace. We focus on affordability, reliability, and a smooth shopping experience from browsing to checkout.",
+    "Weaver Illumination brings together quality products across multiple categories, helping you find everything you need in one curated online marketplace.",
   checklist: [
-    "Wide selection across 12+ categories",
+    "Wide selection across 16+ categories",
     "Competitive prices on everyday essentials",
     "Fast, reliable shipping nationwide",
     "Dedicated customer support team",
@@ -119,24 +165,25 @@ export const aboutSection = {
 };
 
 export const featuredCollection = {
-  title: "Featured Products",
-  description:
-    "Hand-picked favorites across electronics, home, beauty, and more — everything you need in one marketplace.",
-  bannerImage: "/banners/featured.jpg",
-  categorySlug: "electronics",
+  title: "THE EVERYDAY COLLECTION",
+  description: "Useful things. Beautifully chosen.",
+  bannerImage: "/banners/featured-lifestyle.jpg",
+  lifestyleSlug: "linen-throw-blanket",
+  featuredSlug: "cast-iron-dutch-oven",
+  smallSlugs: ["ceramic-pour-over-set", "jojoba-face-oil", "hiking-daypack"],
 };
 
 export const bestSellerTabs = [
   { label: "All", slug: "all" },
-  { label: "Electronics", slug: "electronics" },
-  { label: "Home & Kitchen", slug: "home-kitchen" },
+  { label: "Home", slug: "home-kitchen" },
+  { label: "Tech", slug: "electronics" },
   { label: "Beauty", slug: "beauty" },
-  { label: "Sports", slug: "sports-outdoors" },
+  { label: "Outdoor", slug: "outdoor" },
 ];
 
 export const newsletter = {
-  title: "Get Exclusive Deals Before Everyone Else",
-  description: "Subscribe for discounts, new arrivals, and weekly offers.",
+  title: "A LITTLE MORE LIGHT.",
+  description: "Fresh arrivals, useful finds and occasional offers, sent without the noise.",
   placeholder: "Enter your email address",
   buttonText: "Subscribe",
 };

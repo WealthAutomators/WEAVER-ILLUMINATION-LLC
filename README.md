@@ -1,100 +1,41 @@
-# AAM Partners LLC
+# WEAVER ILLUMINATION LLC
 
-A production-quality, reusable ecommerce storefront template built with Next.js App Router, TypeScript, and Tailwind CSS.
+A production-quality ecommerce storefront built with Next.js App Router, TypeScript, and Tailwind CSS.
 
-This is the master template for AAM Partners LLC — a general marketplace selling electronics, home essentials, beauty, toys, pet supplies, and more. Duplicate this repository and swap brand assets, colors, and data to launch new stores without rewriting components.
+Weaver Illumination is a curated lifestyle marketplace — thoughtful products for everyday spaces, from home and workspace to travel and wellness.
 
 ## Tech Stack
 
-- **Next.js 15** (App Router)
+- **Next.js 16** (App Router)
 - **TypeScript**
 - **Tailwind CSS v4**
 - **shadcn/ui** (Radix primitives)
 - **Lucide Icons**
 - **Framer Motion** (subtle animations)
 - **Embla Carousel**
-- **React Context** (cart, wishlist, recently viewed)
-- **localStorage** persistence (no backend)
 
-## Getting Started
+## Brand
+
+- **Primary:** Soft Black `#171817`
+- **Accent:** Warm Brass `#B88A44`
+- **Background:** Warm Ivory `#F5F3EE`
+- **Typography:** Cormorant Garamond (display), DM Sans (headings), Inter (body)
+
+## Contact
+
+- **Email:** weaverilluminationllc@gmail.com
+- **Address:** 2625 E 1300 S, ST GEORGE, UT 84790
+
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Image Setup
 
 ```bash
-npm run build   # Production build
-npm run start   # Start production server
+node scripts/generate-images.mjs   # Generate placeholder SVGs
+npm run images:unsplash            # Download Unsplash photos (requires UNSPLASH_ACCESS_KEY in .env.local)
 ```
-
-## Customizing for a New Store
-
-To rebrand this template for a new store, edit **only** these files:
-
-| What to change | Where |
-|---|---|
-| Company name, contact, social | `data/company.ts` |
-| Brand colors | `styles/theme.ts` + `app/globals.css` |
-| Navigation & footer links | `data/navigation.ts` |
-| Categories | `data/categories.ts` |
-| Products | `data/products.ts` |
-| Homepage content | `data/homepage.ts` |
-| Testimonials | `data/testimonials.ts` |
-| Logo | `public/logo/` |
-| Hero images | `public/hero/` |
-| Banners | `public/banners/` |
-| Category images | `public/categories/` |
-| Product images | `public/products/` |
-
-Regenerate placeholder SVGs after changing products:
-
-```bash
-node scripts/generate-images.mjs
-```
-
-## Project Structure
-
-```
-app/                  # Next.js pages (App Router)
-components/
-  navbar/             # Sticky navigation with search
-  footer/             # Four-column footer
-  homepage/           # Homepage sections
-  product/            # Product cards, gallery, quick view
-  cart/               # Cart page
-  checkout/           # Checkout flow
-  shop/               # Shop with filters
-  ui/                 # Reusable UI primitives
-data/                 # All store content (JSON-like TS files)
-lib/                  # Utilities and constants
-hooks/                # Custom React hooks
-context/              # Cart, wishlist, recently viewed
-public/               # Static assets
-styles/               # Theme color tokens
-types/                # TypeScript interfaces
-```
-
-## Features
-
-- Full homepage with 12 sections (hero, categories, deals, best sellers, etc.)
-- Working cart with add/remove/quantity and localStorage persistence
-- Working wishlist with localStorage persistence
-- Live search filtering in navbar and shop page
-- Quick view modal on product cards
-- Product detail page with gallery, accordion, related products
-- Shop page with sidebar filters, sorting, and pagination
-- Checkout with order summary and payment form
-- Fully responsive (mobile, tablet, desktop)
-- 26 products across 6 categories
-
-## Checkout
-
-Use coupon code `SAVE10` on the cart page for a 10% discount.
-
-## Brand Colors
-
-- **Primary:** Royal Purple `#7C3AED`
-- **Accent:** Amber `#F59E0B`

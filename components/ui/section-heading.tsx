@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
 
 interface SectionHeadingProps {
   title: string;
@@ -28,13 +27,18 @@ export function SectionHeading({
       )}
     >
       <div>
-        <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">{title}</h2>
-        {subtitle && <p className="mt-2 text-muted-foreground">{subtitle}</p>}
+        <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-primary">{title}</h2>
+        {subtitle && (
+          <p className="mt-2 font-display text-xl font-light text-primary md:text-2xl">{subtitle}</p>
+        )}
       </div>
       {viewMoreLink && (
-        <Button variant="link" asChild className="text-sm font-medium">
-          <Link href={viewMoreLink}>{viewMoreText} →</Link>
-        </Button>
+        <Link
+          href={viewMoreLink}
+          className="font-heading text-xs uppercase tracking-wider text-accent transition-colors hover:text-primary"
+        >
+          {viewMoreText} →
+        </Link>
       )}
     </div>
   );
